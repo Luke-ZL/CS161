@@ -1,0 +1,19 @@
+The graph contained in graph1.txt is unsatisfiable with 3 colors.
+With 4 colors, it is satisfiable.
+
+Commands used:
+(graph-coloring-to-sat "graph1.txt" "sat1" 3)
+(graph-coloring-to-sat "graph1.txt" "sat2" 4)
+./rsat sat1
+./rsat sat2
+
+I observed in graph1.txt there is no node with a degree larger than 4: the max degree is exactly 4. A possible coloring is as follows(using red(r), green(g), blue(b), yellow(y)):
+Node 1: R
+Node 2: G
+Node 3: B
+Node 4: R
+Node 5: B
+Node 6: G
+Node 7: Y
+
+The graph contained in graph2.txt is satisfiable only when using 8 or more colors.

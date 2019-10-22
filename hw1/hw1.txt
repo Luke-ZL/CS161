@@ -1,0 +1,103 @@
+1.
+sample test cases:
+
+[1]> (load "hw1.lsp")
+;; Loading file hw1.lsp ...
+;; Loaded file hw1.lsp
+T
+[2]> (PAD 0)
+1
+[3]> (PAD 1)
+1
+[4]> (PAD 2)
+1
+[5]> (PAD 3)
+2
+[6]> (PAD 4)
+2
+[7]> (PAD 5)
+3
+[8]> (PAD 6)
+4
+[9]> (PAD 7)
+5
+[10]> (PAD 8)
+7
+[11]> (PAD 9)
+9
+[12]> (PAD 10)
+12
+[13]> (PAD 11)
+16
+[14]> (PAD 12)
+21
+[15]> (PAD 20)
+200
+[16]> (PAD 30)
+3329
+[17]> (PAD 40)
+55405
+[18]> (PAD 50)
+922111
+
+For large values of N, e.g. 50, it takes relatively long time before the program finishes execution. When N is 100, the program simply hangs. This has a rather simple explanation: The implementation of PAD is rather naive and the program has an exponential time commplexity. Thus, the execution time t grows exponentially. When N is large enough, the time taken to complete execution is prohibitively high. For example, when N is 100, the time to complete is so long that the program seems to hang.
+
+
+2.
+sample test cases:
+
+[1]> (load "hw1.lsp")
+;; Loading file hw1.lsp ...
+;; Loaded file hw1.lsp
+T
+[2]> (SUMS 0)
+0
+[3]> (SUMS 1)
+0
+[4]> (SUMS 2)
+0
+[5]> (SUMS 3)
+1
+[6]> (SUMS 4)
+1
+[7]> (SUMS 5)
+2
+[8]> (SUMS 6)
+3
+[9]> (SUMS 7)
+4
+[10]> (SUMS 8)
+6
+[11]> (SUMS 9)
+8
+[12]> (SUMS 10)
+11
+[13]> (SUMS 11)
+15
+[14]> (SUMS 12)
+20
+
+SUMS and PAD have a very simple relationship: (SUMS N) = (PAD N) - 1. This can be explained when we look closely to the structure of the two functions: both functions have exactly the same structure except the first 3 terms of SUMS are 0 while those of PAD are 1, and the recursive relationship for SUMS has an extra +1 term. Since each new unknown term for PAD is derived from two known terms and each unknown term for SUMS is derived from two known terms plus 1, and the first 3 known terms for SUMS are defined to be 1 less than those for PAD, each successive new derived terms for SUMS will be 1 less than the corresponding term of PAD. This explains the relationship.
+
+
+3.
+sample test cases:
+
+[1]> (load "hw1.lsp")
+;; Loading file hw1.lsp ...
+;; Loaded file hw1.lsp
+T
+[2]> (ANON '42)
+?
+[3]> (ANON 'FOO)
+?
+[4]> (ANON '(((L E) F) T))
+(((? ?) ?) ?)
+[5]>  (ANON '(5 FOO 3.1 -0.2))
+(? ? ? ?)
+[6]>  (ANON '(1 (FOO 3.1) -0.2))
+(? (? ?) ?)
+[7]> (ANON '(((1 2) (FOO 3.1)) (BAR -0.2)))
+(((? ?) (? ?)) (? ?))
+[8]> (ANON '(R (I (G (H T)))))
+(? (? (? (? ?))))
