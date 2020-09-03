@@ -1,4 +1,4 @@
-# My CS161 homework
+# CS161_Fundamentals_of_Artificial_Intelligence
 
 
 ## Introduction
