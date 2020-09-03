@@ -2,7 +2,7 @@
 
 
 ## Introduction
-This repository contains my projects for CS 161 Fundamentals of Artificial Intelligence.
+This repository contains my projects for CS 161 Fundamentals of Artificial Intelligence taken in Spring 2019.
 
 ## Homework
 [hw1](https://github.com/Luke-ZL/CS161/tree/master/hw1) contains some warmup funcitons for common Lisp.
